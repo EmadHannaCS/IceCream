@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="JSON\prices.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="JSON\prices.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IceCream.DAL\IceCream.DAL.csproj" />
+  </ItemGroup>
+
+
+</Project>
