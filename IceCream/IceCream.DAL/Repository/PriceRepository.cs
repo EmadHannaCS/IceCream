@@ -7,7 +7,7 @@ using System.Text;
 
 namespace IceCream.DAL.Repository
 {
-    public class PriceRepository
+    public class PriceRepository : IPriceRepository
     {
         public List<PriceVM> Get()
         {
