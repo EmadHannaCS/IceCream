@@ -23,14 +23,18 @@ namespace IceCream.DAL.Repository
         }
         public void Generate()
         {
+            var userRandomDic = new Dictionary<string, int>();//to make some users pay always per purchase to make some balances to be zeros
             var _data = new List<PaymentVM>();
-
 
             var orders = _orderRepo.Get();
             Random random = new Random();
             for (int i = 0; i < 1000; i++)
             {
                 int randomAmount = random.Next(1, 5);
+                if (userRandomDic.ContainsKey(orders[i].user))
+                    randomAmount = userRandomDic[orders[i].user];
+                else
+                    userRandomDic.Add(orders[i].user, randomAmount);
 
                 _data.Add(new PaymentVM()
                 {
